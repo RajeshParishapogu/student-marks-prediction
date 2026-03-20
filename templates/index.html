@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Prediction</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background: linear-gradient(-45deg,#1f4037,#99f2c8,#0f2027,#203a43);
+            background-size:400% 400%;
+            animation:gradientMove 10s ease infinite;
+        }
+
+        .card{
+            width:450px;
+            padding:55px;
+            border-radius:25px;
+            background:rgba(255,255,255,0.08);
+            backdrop-filter:blur(25px);
+            color:white;
+            text-align:center;
+            box-shadow:0 25px 60px rgba(0,0,0,0.5);
+            transition:0.4s ease;
+        }
+
+        h1{
+            font-size:30px;
+            font-weight:700;
+            letter-spacing:1px;
+            margin-bottom:12px;
+        }
+
+        .subtitle{
+            font-size:14px;
+            opacity:0.85;
+            margin-bottom:35px;
+        }
+
+        label{
+            font-size:14px;
+            display:block;
+            margin-bottom:8px;
+            text-align:left;
+            font-weight:500;
+        }
+
+        input{
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            font-size:15px;
+            outline:none;
+            transition:0.3s ease;
+        }
+
+        input:focus{
+            box-shadow:0 0 15px rgba(255,255,255,0.7);
+            transform:scale(1.02);
+        }
+
+        button{
+            width:100%;
+            margin-top:30px;
+            padding:15px;
+            border:none;
+            border-radius:12px;
+            font-size:16px;
+            font-weight:600;
+            cursor:pointer;
+            background: linear-gradient(45deg,#00f5a0,#00d9f5);
+            color:#003333;
+            transition:0.3s ease;
+        }
+
+        .footer-note{
+            margin-top:20px;
+            font-size:12px;
+            opacity:0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Student Marks Predictor</h1>
+
+    <div class="subtitle">
+        Model Accuracy (R² Score): {{ accuracy }}
+    </div>
+
+    <form action="/predict" method="POST">
+
+        <label>Enter Study Hours</label>
+        <input type="number" name="studenthours" step="any" placeholder="e.g. 5.5" required>
+
+        <button type="submit">Predict Marks</button>
+
+    </form>
+
+    <div class="footer-note">
+        Students Academic Performance Estimator
+    </div>
+
+</div>
+
+</body>
+</html>

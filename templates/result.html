@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background: linear-gradient(-45deg,#1f4037,#99f2c8,#0f2027,#203a43);
+            background-size:400% 400%;
+            animation:gradientMove 10s ease infinite;
+        }
+        .card{
+            width:450px;
+            padding:55px;
+            border-radius:25px;
+            background:rgba(255,255,255,0.08);
+            backdrop-filter:blur(25px);
+            color:white;
+            text-align:center;
+            box-shadow:0 25px 60px rgba(0,0,0,0.5);
+            transition:0.4s ease;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 35px 80px rgba(0,0,0,0.6);
+        }
+
+        h1{
+            font-size:28px;
+            font-weight:700;
+            margin-bottom:20px;
+        }
+
+        .result-box{
+            margin:25px 0;
+            padding:20px;
+            border-radius:15px;
+            background:rgba(255,255,255,0.15);
+            font-size:22px;
+            font-weight:600;
+            letter-spacing:1px;
+        }
+
+        .accuracy{
+            font-size:14px;
+            opacity:0.85;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:14px 28px;
+            border-radius:12px;
+            font-size:15px;
+            font-weight:600;
+            text-decoration:none;
+            background: linear-gradient(45deg,#00f5a0,#00d9f5);
+            color:#024242;
+            transition:0.3s ease;
+        }
+
+        .footer-note{
+            margin-top:25px;
+            font-size:12px;
+            opacity:0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Prediction Result</h1>
+
+    <div class="result-box">
+        Predicted Marks: {{ prediction }}
+    </div>
+
+    <div class="accuracy">
+        Model Accuracy (R² Score): {{ accuracy }}
+    </div>
+
+    <a href="/" class="btn">Predict Again</a>
+
+    <div class="footer-note">
+      Students Academic Performance Estimator
+    </div>
+
+</div>
+
+</body>
+</html>
